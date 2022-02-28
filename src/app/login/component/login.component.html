@@ -1,0 +1,51 @@
+<main>
+  <mat-card class="main-card">
+    <mat-card-header>
+      <mat-card-title *ngIf="user == null">Login / Sign Up</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngIf="user != null">
+        <div class="btn-space">
+          <button mat-raised-button class="btn-logout" (click)="signOut()">Logout</button>
+          <button mat-raised-button class="btn-list" (click)="list()">List Mails</button>
+        </div>
+        <div>
+          <h6>List Email</h6>
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let message of messages">
+                <td>
+                  {{message.id}}
+                </td>
+                <td>
+                  <button mat-raised-button (click)="getMessage(message.id)">Get Mail</button>
+                </td>
+              </tr>
+              <div *ngIf="dataNotFound(messages)">
+                *No Data
+              </div>
+            </tbody>
+          </table>
+          <div> {{message}} </div>
+        </div>
+      </div>
+      <mat-card-actions>
+        <div *ngIf="user == null" class="g-signin2" data-onsuccess="onSignIn">
+          <a class="oauth-container btn darken-4 white black-text" (click)="sign()" style="text-transform:none">
+            <div class="left">
+              <img width="20px" style="margin-top:7px; margin-right:8px" alt="Google sign-in"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+            </div>
+            Sign In with Google
+          </a>
+        </div>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+</main>

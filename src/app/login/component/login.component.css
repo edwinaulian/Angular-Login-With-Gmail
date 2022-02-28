@@ -1,0 +1,36 @@
+.example-full-width, .example-form {
+    width: 100%;
+}
+
+@media screen and (min-width: 0px) and (max-width: 599.98px) {
+    .example-full-width, .example-form {
+        width: 75%;
+    }
+}
+
+main {
+    width: 50%;
+    margin: 1rem auto ;
+    margin-top: 7rem;
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: #4326c7;
+}
+
+.btn-list {
+    margin-left: 2%;
+}
+
+table{
+    border-collapse: collapse;
+}
+table th, table td { /* Multicolored border */
+    text-align: center;
+    border: 1px solid;
+    border-color: #f00 #0f0 #00f #f0f;
+}
+table th, table td{ /* Added padding for better layout after collapsing */
+    padding: 4px 8px;
+}
